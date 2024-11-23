@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=DisplayPanel
+comment1.params=
+comment1.target=DisplayPanel()
+comment2.params=fontStyle\ fontSize\ bgColor
+comment2.target=javax.swing.JTextField\ createTextField(int,\ int,\ java.awt.Color)
+comment3.params=
+comment3.target=javax.swing.JTextField\ getFormulaDisplay()
+comment4.params=
+comment4.target=javax.swing.JTextField\ getDisplay()
+numComments=5

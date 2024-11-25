@@ -1,4 +1,5 @@
-package PBL_Module_2;
+package ksk;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
@@ -7,8 +8,8 @@ public class StudentScore {
     String filePath;
 
     // 기본 생성자
-    public StudentScore() { 
-    }  
+    public StudentScore() {
+    }
 
     // 매개변수를 가진 생성자
     public StudentScore(String filePath) {
@@ -43,14 +44,15 @@ public class StudentScore {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] data = line.split(" ");
-                String name = data[0];  // 이름
-                Integer score = Integer.parseInt(data[1]);  // 성적 (정수형)
+                String name = data[0]; // 이름
+                Integer score = Integer.parseInt(data[1]); // 성적 (정수형)
 
                 // HashMap에 이름과 성적 저장
                 studentScores.put(name, score);
             }
 
             // 파일 읽기 완료 후 Scanner와 FileReader 닫기
+
             scanner.close();
             fr.close();
 
@@ -65,12 +67,12 @@ public class StudentScore {
         int totalScore = 0;
         // iterator를 사용하여 총점 계산
         for (String name : studentScores.keySet()) {
-            totalScore += studentScores.get(name);  // 성적을 총점에 누적
+            totalScore += studentScores.get(name); // 성적을 총점에 누적
         }
 
         // 평균 계산 (HashMap의 size() 메소드를 사용)
         if (studentScores.size() > 0) {
-            double averageScore = (double) totalScore / studentScores.size();  // 분모에 size() 메소드 사용
+            double averageScore = (double) totalScore / studentScores.size(); // 분모에 size() 메소드 사용
             System.out.println("------계산 결과------");
             System.out.println("총점: " + totalScore);
             System.out.println("평균: " + averageScore);
@@ -87,7 +89,7 @@ public class StudentScore {
         // 성적을 기준으로 내림차순 정렬
         scoreList.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
 
-        int rank = 1;  // 등수 변수
+        int rank = 1; // 등수 변수
 
         for (Map.Entry<String, Integer> entry : scoreList) {
             String name = entry.getKey();

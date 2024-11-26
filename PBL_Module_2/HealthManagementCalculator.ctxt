@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=HealthManagementCalculator
+comment1.params=name\ calories\ protein\ carbs\ fat
+comment1.target=Food(java.lang.String,\ int,\ double,\ double,\ double)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment4.params=filePath\ foodDatabase
+comment4.target=void\ loadFoodData(java.lang.String,\ java.util.HashMap)
+comment5.params=foodDatabase
+comment5.target=void\ displayFoodData(java.util.HashMap)
+comment6.params=scanner
+comment6.target=void\ calculateBMI(java.util.Scanner)
+comment7.params=scanner
+comment7.target=void\ calculateExerciseCalories(java.util.Scanner)
+numComments=8

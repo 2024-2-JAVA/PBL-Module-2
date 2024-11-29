@@ -10,19 +10,19 @@ class MyActionListener implements ActionListener {
 
         String label = e.getActionCommand();
         switch (label) {
-            case "meter_inch" -> {
+            case "미터, 인치 변환" -> {
                 displayManager.meter_inch_calculator.setVisible(true);
             }
-            case "C_F" -> {
+            case "섭시 화시 변환" -> {
                 displayManager.c_f_calculator.setVisible(true);
             }
-            case "formation" -> {
+            case "진법 변환" -> {
                 displayManager.formCalculator.setVisible(true);
             }
-            case "discount" -> {
+            case "할인 계산" -> {
                 displayManager.disCalculator.setVisible(true);
             }
-            case "calc" -> {
+            case "기본 계산 기능" -> {
                 displayManager.calculator.setVisible(true);
             }
             default -> System.out.println("Unknown action.");

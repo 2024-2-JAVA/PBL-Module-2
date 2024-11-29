@@ -12,7 +12,6 @@ public class DisCalculatorExample extends JFrame {
 
     public DisCalculatorExample() {
         super("자바 스윙 계산기"); // 프레임 제목 설정
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 닫기 버튼 클릭 시 프로그램 종료
         Container c = getContentPane(); // 컨테이너 가져오기
         c.setLayout(new BorderLayout()); // BorderLayout으로 레이아웃 설정
 

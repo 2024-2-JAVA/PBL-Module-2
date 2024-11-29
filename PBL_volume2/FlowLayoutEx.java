@@ -12,7 +12,7 @@ public class FlowLayoutEx extends JFrame {
         c.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 40));
 
         // String 배열 정의
-        String[] buttons = {"meter_inch", "C_F", "formation", "discount", "calc"};
+        String[] buttons = {"미터, 인치 변환", "섭시 화시 변환", "진법 변환", "할인 계산", "기본 계산 기능"};
 
         // 버튼 추가
         for (String label : buttons) {

@@ -12,7 +12,6 @@ public class CalculatorExample extends JFrame {
 
     public CalculatorExample() {
         super("자바 스윙 계산기"); // 프레임 제목 설정
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 닫기 버튼 클릭 시 프로그램 종료
         Container c = getContentPane(); // 컨테이너 가져오기
         c.setLayout(new BorderLayout()); // BorderLayout으로 레이아웃 설정
 
@@ -22,7 +21,6 @@ public class CalculatorExample extends JFrame {
         c.add(new SouthPanel(), BorderLayout.SOUTH); // 하단 패널
 
         setSize(330, 400); // 프레임 크기 설정
-        setVisible(true); // 프레임 표시
     }
 
     // NorthPanel 클래스: 상단 패널 (결과 표시)
@@ -66,10 +64,5 @@ public class CalculatorExample extends JFrame {
             add(new JLabel("계산 결과")); // "계산 결과" 레이블 추가
             add(footerLabel); // 하단 메시지를 표시할 텍스트 필드 추가
         }
-    }
-
-    // main 메서드: 프로그램 실행 진입점
-    public static void main(String[] args) {
-        new CalculatorExample(); // CalculatorExample 객체 생성 및 표시
     }
 }

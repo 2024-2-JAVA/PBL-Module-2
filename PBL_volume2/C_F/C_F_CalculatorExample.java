@@ -12,7 +12,6 @@ public class C_F_CalculatorExample extends JFrame {
 
     public C_F_CalculatorExample() {
         super("섭씨/화씨 변환기"); // 프레임 제목 설정
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 닫기 버튼 클릭 시 프로그램 종료
         setSize(400, 300); // 프레임 크기 설정
         setLayout(null); // 절대 위치 사용
 
@@ -57,12 +56,5 @@ public class C_F_CalculatorExample extends JFrame {
         Celsius_result_Field.setBounds(130, 160, 190, 30);
         Celsius_result_Field.setEditable(false); // 결과 필드는 편집 불가
         add(Celsius_result_Field);
-
-        setVisible(true); // 프레임 표시
-    }
-
-    // main 메서드: 프로그램 실행 진입점
-    public static void main(String[] args) {
-        new C_F_CalculatorExample(); // CalculatorExample 객체 생성 및 표시
     }
 }

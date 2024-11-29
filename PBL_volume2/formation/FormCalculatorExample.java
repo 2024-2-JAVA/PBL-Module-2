@@ -13,7 +13,6 @@ public class FormCalculatorExample extends JFrame {
 
     public FormCalculatorExample() {
         super("자바 스윙 계산기"); // 프레임 제목 설정
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 닫기 버튼 클릭 시 프로그램 종료
         Container c = getContentPane(); // 컨테이너 가져오기
         c.setLayout(new BorderLayout()); // BorderLayout으로 레이아웃 설정
 
@@ -22,7 +21,6 @@ public class FormCalculatorExample extends JFrame {
         c.add(new SouthPanel(), BorderLayout.SOUTH); // 하단 패널
 
         setSize(700, 400); // 프레임 크기 설정
-        setVisible(true); // 프레임 표시
     }
 
     // CenterPanel 클래스: 상단 패널 (입력 필드 및 버튼)
@@ -50,11 +48,6 @@ public class FormCalculatorExample extends JFrame {
             add(new JLabel("16진수")); // "계산 결과" 레이블 추가
             add(hexadecimal_numberField); // 16진수 결과 필드
         }
-    }
-
-    // main 메서드: 프로그램 실행 진입점
-    public static void main(String[] args) {
-        new FormCalculatorExample(); // FormCalculatorExample 객체 생성 및 표시
     }
 }
 

@@ -21,7 +21,6 @@ public class DisCalculatorExample extends JFrame {
         c.add(new SouthPanel(), BorderLayout.SOUTH); // 하단 패널
 
         setSize(390, 400); // 프레임 크기 설정
-        setVisible(true); // 프레임 표시
     }
 
     // NorthPanel 클래스: 상단 패널 (결과 표시)

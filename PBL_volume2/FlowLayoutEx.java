@@ -16,7 +16,7 @@ public class FlowLayoutEx extends JFrame {
 
         // 버튼 추가
         for (String label : buttons) {
-            JButton button= new JButton(label);
+            JButton button = new JButton(label);
             button.addActionListener(new MyActionListener());
             c.add(button); // 배열의 각 요소를 버튼 텍스트로 설정
         }

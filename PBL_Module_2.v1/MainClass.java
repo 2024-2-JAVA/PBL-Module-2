@@ -6,4 +6,3 @@ public class MainClass
         new CalculatorInterface();
     }
 }
-//test

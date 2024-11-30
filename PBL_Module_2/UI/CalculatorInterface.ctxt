@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=CalculatorInterface
+comment1.params=recordListModel
+comment1.target=CalculatorInterface(javax.swing.DefaultListModel)
+numComments=2

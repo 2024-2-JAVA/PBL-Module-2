@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 
 public class MyActionListener implements ActionListener {
-    // DisCalculatorExample 클래스에서 정의된 resultField와 footerLabel 참조
+    // DisCalculatorExample 클래스에서 정의된 resultField와 discountField 참조
     public static JTextField resultField = DisCalculatorExample.resultField;
     public static JTextField costField = DisCalculatorExample.costField;
-    public static JTextField footerLabel = DisCalculatorExample.footerLabel;
+    public static JTextField discountField = DisCalculatorExample.discountField;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -28,7 +28,7 @@ public class MyActionListener implements ActionListener {
     
             // 할인율 유효성 검사 (0% ~ 100%)
             if (discount < 0 || discount > 100) {
-                footerLabel.setText("할인율은 0에서 100 사이의 값이어야 합니다.");
+                discountField.setText("할인율은 0에서 100 사이의 값이어야 합니다.");
                 return;
             }
     
@@ -36,10 +36,10 @@ public class MyActionListener implements ActionListener {
             double discountedPrice = cost - (cost * discount / 100);
     
             // 결과 출력
-            footerLabel.setText("할인된 가격: " + String.format("%.2f", discountedPrice));
+            discountField.setText("할인된 가격: " + String.format("%.2f", discountedPrice));
         } catch (NumberFormatException ex) {
             // 잘못된 입력값 처리
-            footerLabel.setText("올바른 숫자를 입력하세요.");
+            discountField.setText("올바른 숫자를 입력하세요.");
         }
     }
 }

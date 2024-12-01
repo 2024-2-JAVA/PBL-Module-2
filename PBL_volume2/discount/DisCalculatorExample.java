@@ -1,54 +1,79 @@
 package discount;
 
-
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class DisCalculatorExample extends JFrame {
-    // 결과를 표시할 텍스트 필드 (입력 및 계산 결과)
-    public static JTextField resultField = new JTextField(30);
-    public static JTextField costField = new JTextField(30);
-    public static JTextField footerLabel = new JTextField(30);
+    // 텍스트 필드 선언
+    public static JTextField costField = new JTextField(10);  // 원가 입력 필드
+    public static JTextField discountField = new JTextField(10);  // 할인율 입력 필드
+    public static JTextField resultField = new JTextField(10);  // 결과 필드
 
     public DisCalculatorExample() {
-        super("자바 스윙 계산기"); // 프레임 제목 설정
-        Container c = getContentPane(); // 컨테이너 가져오기
-        c.setLayout(new BorderLayout()); // BorderLayout으로 레이아웃 설정
+        super("Discount Calculator"); // 프레임 제목 설정
+        setDefaultCloseOperation(EXIT_ON_CLOSE); // 닫기 버튼 동작 설정
+        setSize(400, 250); // 프레임 크기 설정
+        setLayout(new GridLayout(4, 2, 10, 10)); // 레이아웃 설정
 
-        // 프레임에 각각의 패널 추가
-        c.add(new CenterPanel(), BorderLayout.CENTER); // 중앙 패널 (버튼)
-        c.add(new SouthPanel(), BorderLayout.SOUTH); // 하단 패널
+        // 라벨 추가
+        add(new JLabel("Original Price: "));
+        styleTextField(costField);
+        add(costField);
 
-        setSize(390, 400); // 프레임 크기 설정
+        add(new JLabel("Discount Rate (%): "));
+        styleTextField(discountField);
+        add(discountField);
+
+        // 계산 버튼 추가
+        JButton calculateButton = new JButton("Calculate");
+        styleButton(calculateButton);
+        calculateButton.addActionListener(new CalculateActionListener());
+        add(calculateButton);
+
+        add(new JLabel(""));
+
+        // 결과 필드
+        add(new JLabel("Discounted Price: "));
+        styleTextField(resultField);
+        resultField.setEditable(false);
+        add(resultField);
     }
 
-    // NorthPanel 클래스: 상단 패널 (결과 표시)
-    class CenterPanel extends JPanel {
-        public CenterPanel() {
-            setBackground(Color.gray); // 배경색 설정
-            setLayout(new FlowLayout()); // FlowLayout으로 컴포넌트 정렬
-            add(new JLabel("   원가 ")); // "계산기" 레이블 추가
-            add(resultField); // 결과 표시 텍스트 필드 추가
-            add(new JLabel("할인율")); // "계산기" 레이블 추가
-            add(costField); // 결과 표시 텍스트 필드 추가
-            JButton button = new JButton("계산");
-            button.addActionListener(new MyActionListener());
-            add(button);
+    // 텍스트 필드 스타일 지정
+    private void styleTextField(JTextField textField) {
+        textField.setFont(new Font("Arial", Font.PLAIN, 14));
+        textField.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        textField.setBackground(Color.WHITE);
+    }
+
+    // 버튼 스타일 지정
+    private void styleButton(JButton button) {
+        button.setFont(new Font("Arial", Font.BOLD, 14));
+        button.setBackground(Color.LIGHT_GRAY);
+        button.setForeground(Color.BLACK);
+        button.setFocusPainted(false);
+        button.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 2));
+    }
+
+    // 계산 버튼 동작 정의
+    private class CalculateActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try {
+                double cost = Double.parseDouble(costField.getText());
+                double discountRate = Double.parseDouble(discountField.getText());
+                if (discountRate < 0 || discountRate > 100) {
+                    throw new IllegalArgumentException("Discount rate must be between 0 and 100.");
+                }
+                double discountedPrice = cost - (cost * discountRate / 100);
+                resultField.setText(String.format("%.2f", discountedPrice));
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter valid numbers!", "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (IllegalArgumentException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
-    }
-
-    // SouthPanel 클래스: 하단 패널 (결과 상태 표시)
-    class SouthPanel extends JPanel {
-        public SouthPanel() {
-            setBackground(Color.YELLOW); // 배경색 설정
-            setLayout(new FlowLayout()); // FlowLayout으로 컴포넌트 정렬
-            add(new JLabel("계산 결과")); // "계산 결과" 레이블 추가
-            add(footerLabel); // 하단 메시지를 표시할 텍스트 필드 추가
-        }
-    }
-
-    // main 메서드: 프로그램 실행 진입점
-    public static void main(String[] args) {
-        new DisCalculatorExample(); // DisCalculatorExample 객체 생성 및 표시
     }
 }

@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=FBOLogic
+comment1.params=num1\ num2\ operator
+comment1.target=double\ performOperation(double,\ double,\ java.lang.String)
+numComments=2

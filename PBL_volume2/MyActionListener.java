@@ -25,6 +25,9 @@ class MyActionListener implements ActionListener {
             case "기본 계산 기능" -> {
                 displayManager.calculator.setVisible(true);
             }
+            case "BMI계산" -> {
+                displayManager.BMI.setVisible(true);
+            }
             default -> System.out.println("Unknown action.");
         }
     }

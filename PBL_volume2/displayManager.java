@@ -1,3 +1,4 @@
+import BMICalculator.BMICalculatorExample;
 import C_F.C_F_CalculatorExample;
 import calc.CalculatorExample;
 import discount.DisCalculatorExample;
@@ -10,4 +11,5 @@ public class displayManager {
     public static FormCalculatorExample formCalculator = new FormCalculatorExample();
     public static DisCalculatorExample disCalculator = new DisCalculatorExample();
     public static CalculatorExample calculator = new CalculatorExample();
+    public static BMICalculatorExample BMI = new BMICalculatorExample();
 }

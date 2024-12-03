@@ -13,7 +13,6 @@ public class DisCalculatorExample extends JFrame {
 
     public DisCalculatorExample() {
         super("Discount Calculator"); // 프레임 제목 설정
-        setDefaultCloseOperation(EXIT_ON_CLOSE); // 닫기 버튼 동작 설정
         setSize(400, 250); // 프레임 크기 설정
         setLayout(new GridLayout(4, 2, 10, 10)); // 레이아웃 설정
 

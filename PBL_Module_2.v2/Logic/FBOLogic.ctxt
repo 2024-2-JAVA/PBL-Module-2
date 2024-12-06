@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=FBOLogic
+comment1.params=num1\ num2\ operator
+comment1.target=double\ performOperation(double,\ double,\ java.lang.String)
+comment10.params=weight\ height
+comment10.target=double\ calculateBMI(double,\ double)
+comment11.params=bmi
+comment11.target=java.lang.String\ getBMICategory(double)
+comment2.params=fahrenheit
+comment2.target=double\ fahrenheitToCelsius(double)
+comment3.params=celsius
+comment3.target=double\ celsiusToFahrenheit(double)
+comment4.params=originalPrice\ discountRate
+comment4.target=double\ calculateDiscount(double,\ double)
+comment5.params=meter
+comment5.target=double\ meterToInch(double)
+comment6.params=inch
+comment6.target=double\ inchToMeter(double)
+comment7.params=decimal
+comment7.target=java.lang.String\ decimalToBinary(int)
+comment8.params=decimal
+comment8.target=java.lang.String\ decimalToOctal(int)
+comment9.params=decimal
+comment9.target=java.lang.String\ decimalToHex(int)
+numComments=12

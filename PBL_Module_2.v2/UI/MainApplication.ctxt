@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=MainApplication
+comment1.params=
+comment1.target=MainApplication()
+comment10.params=bmi
+comment10.target=java.lang.String\ getBMICategory(double)
+comment2.params=feature
+comment2.target=void\ loadFeature(java.lang.String)
+comment3.params=
+comment3.target=javax.swing.JPanel\ createTemperaturePanel()
+comment4.params=
+comment4.target=javax.swing.JPanel\ createDiscountPanel()
+comment5.params=textField
+comment5.target=void\ styleTextField(javax.swing.JTextField)
+comment6.params=button
+comment6.target=void\ styleButton(javax.swing.JButton)
+comment7.params=
+comment7.target=javax.swing.JPanel\ createMeterInchPanel()
+comment8.params=
+comment8.target=javax.swing.JPanel\ createNumberSystemPanel()
+comment9.params=
+comment9.target=javax.swing.JPanel\ createBMIPanel()
+numComments=11
